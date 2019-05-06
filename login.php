@@ -18,17 +18,15 @@ include('header.html');
 		Username: <input type="text" name="username">
 	</p>
 	<p>
-		First Name: <input type="text" name="first_name">
-	</p>
-	<p>
-		Last Name: <input type="text" name="last_name">
-	</p>
-	<p>
 		Password: <input type="text" name="pass">
 	</p>
 	<br>
 	<input type="submit" value="Login">
 </form>
+
+<br>
+
+<a href='register.php'>Register</a>
 
 <?php
 
