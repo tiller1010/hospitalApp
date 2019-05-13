@@ -9,14 +9,14 @@ function load($page = 'login.php'){
 	exit();
 }
 
-function validate($dbc, $email = '', $pwd = ''){
+function validate($dbc, $user = '', $pwd = ''){
 	$errors = array();
 
-	if(empty($email)){
-		$errors[] = 'Enter your email address.';
+	if(empty($user)){
+		$errors[] = 'Enter your username.';
 	}
 	else{
-		$e = mysqli_real_escape_string($dbc, trim($email));
+		$u = mysqli_real_escape_string($dbc, trim($user));
 	}
 
 	if(empty($pwd)){
@@ -27,7 +27,7 @@ function validate($dbc, $email = '', $pwd = ''){
 	}
 
 	if(empty($errors)){
-		$q = "SELECT user_id, first_name, last_name FROM users WHERE email = '$e' AND pass = SHA2('$p', 256)";
+		$q = "SELECT user_id, first_name, last_name FROM patients WHERE username = '$u' AND pass = SHA2('$p', 256)";
 
 		$r = mysqli_query($dbc, $q);
 
@@ -36,7 +36,7 @@ function validate($dbc, $email = '', $pwd = ''){
 			return array(true, $row);
 		}
 		else{
-			$errors[] = 'Email or password not found.';
+			$errors[] = 'Username or password not found.';
 		}
 	}
 

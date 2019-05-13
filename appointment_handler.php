@@ -1,5 +1,7 @@
 <?php
 
+include('header.html');
+
 require('connect_db.php');
 
 $q = "SELECT * FROM doctors";
