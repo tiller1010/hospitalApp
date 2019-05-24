@@ -1,5 +1,7 @@
 <?php
 
+include('header.html');
+
 if(isset($errors) && !empty($errors)){
 	echo '<p id="err_msg">OOPS! There was a problem<br>';
 	foreach ($errors as $msg) {
@@ -7,8 +9,6 @@ if(isset($errors) && !empty($errors)){
 	}
 	echo 'Please try again or <a href="register.php">Register</a></p>';
 }
-
-include('header.html');
 
 ?>
 

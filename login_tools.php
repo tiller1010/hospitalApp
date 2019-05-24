@@ -9,11 +9,11 @@ function load($page = 'login.php'){
 	exit();
 }
 
-function validate($dbc, $user = '', $pwd = ''){
+function validate($dbc, $user = '', $pwd = '', $usrType){
 	$errors = array();
-
+	$requiredName = ($usrType == 'patient' ? 'username' : 'full name');
 	if(empty($user)){
-		$errors[] = 'Enter your username.';
+		$errors[] = "Enter your $requiredName.";
 	}
 	else{
 		$u = mysqli_real_escape_string($dbc, trim($user));
@@ -27,8 +27,15 @@ function validate($dbc, $user = '', $pwd = ''){
 	}
 
 	if(empty($errors)){
-		$q = "SELECT user_id, first_name, last_name FROM patients WHERE username = '$u' AND pass = SHA2('$p', 256)";
-
+		if($usrType == 'patient'){
+			$q = "SELECT user_id, first_name, last_name FROM patients WHERE username = '$u' AND pass = SHA2('$p', 256)";
+		}
+		elseif($usrType == 'doctor'){
+			$n = explode(' ', $u);
+			$f = $n[0];
+			$l = $n[1];
+			$q = "SELECT first_name, last_name FROM doctors WHERE first_name = '$f' AND last_name = '$l' AND pass = SHA2('$p', 256)";
+		}
 		$r = mysqli_query($dbc, $q);
 
 		if(mysqli_num_rows($r) == 1){
@@ -36,7 +43,7 @@ function validate($dbc, $user = '', $pwd = ''){
 			return array(true, $row);
 		}
 		else{
-			$errors[] = 'Username or password not found.';
+			$errors[] = "$requiredName or password not found.";
 		}
 	}
 

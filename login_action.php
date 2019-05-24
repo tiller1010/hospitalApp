@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']){
 
 	if($_POST['user-type'] == 'patient'){
 
-		list($check, $data) = validate($dbc, $_POST['username'], $_POST['pass']);
+		list($check, $data) = validate($dbc, $_POST['username'], $_POST['pass'], 'patient');
 
 		if($check){
 			session_start();
@@ -21,12 +21,14 @@ if($_SERVER['REQUEST_METHOD']){
 			$errors = $data;
 		}
 
+		include('login.php');
+
 	}
 
 	//Apply DRY to this if it works
-	else if($_POST['user-type'] == 'doctor'){
+	elseif($_POST['user-type'] == 'doctor'){
 
-		list($check, $data) = validate($dbc, $_POST['fullname'], $_POST['pass']);
+		list($check, $data) = validate($dbc, $_POST['fullname'], $_POST['pass'], 'doctor');
 
 		if($check){
 			session_start();
@@ -39,9 +41,10 @@ if($_SERVER['REQUEST_METHOD']){
 			$errors = $data;
 		}
 
+		include('doctor_login.php');
+
 	}
 
 	mysqli_close($dbc);
-}
 
-include('login.php');
+}
