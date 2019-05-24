@@ -1,0 +1,15 @@
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #80488C;
+  width: 100%; }
+
+header a {
+  color: white;
+  text-indent: 5em; }
+
+.vertical_spacer {
+  height: 12em; }
+
+/*# sourceMappingURL=output.css.map */

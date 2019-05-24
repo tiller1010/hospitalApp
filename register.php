@@ -85,8 +85,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		Last Name: <input type="text" name="last_name" value=<?php if(isset($_POST['last_name'])){ echo $_POST['last_name']; } ?>>
 	</p>
 	<p>
-		Password: <input type="text" name="pass1" value=<?php if(isset($_POST['pass1'])){ echo $_POST['pass1']; } ?>>
-		Confirm Password: <input type="text" name="pass2" value=<?php if(isset($_POST['pass2'])){ echo $_POST['pass2']; } ?>>
+		Password: <input type="password" name="pass1" value=<?php if(isset($_POST['pass1'])){ echo $_POST['pass1']; } ?>>
+		Confirm Password: <input type="password" name="pass2" value=<?php if(isset($_POST['pass2'])){ echo $_POST['pass2']; } ?>>
 	</p>
 	<input type="submit" value="Register">
 </form>

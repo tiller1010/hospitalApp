@@ -14,9 +14,9 @@ include('header.html');
 
 <h1>Login</h1>
 <form action="login_action.php" method="POST">
-	<input type="hidden" name="user-type" value="patient">
+	<input type="hidden" name="user-type" value="doctor">
 	<p>
-		Username: <input type="text" name="username">
+		Full name: <input type="text" name="fullname">
 	</p>
 	<p>
 		Password: <input type="password" name="pass">

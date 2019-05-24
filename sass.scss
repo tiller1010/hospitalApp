@@ -1,0 +1,27 @@
+//Colors
+$heading_color: #80488C;
+
+$color-primary-3: #481054;
+$color-primary-4: #2E0138;
+$color-primary-0: #632770;
+$color-primary-1: #9F71A8;
+
+//Spacing
+$vertical_spacing: 12em;
+$horizontal_spacing: 5em;
+
+header{
+	position: absolute;
+	left:0;
+	top:0;
+	background: $heading_color;
+	width: 100%;
+}
+header a{
+	color: white;
+	text-indent: $horizontal_spacing;
+}
+
+.vertical_spacer{
+	height: $vertical_spacing;
+}
