@@ -25,3 +25,9 @@ header a{
 .vertical_spacer{
 	height: $vertical_spacing;
 }
+
+.dropdown-menu{
+	position: absolute;
+	background-color: $color-primary-1;
+	color: #fff;
+}

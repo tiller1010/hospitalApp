@@ -1,5 +1,8 @@
 <?php
 
+$subject = $_GET['subject'];
+$message = $_GET['message'];
+
 //The days of the week are in regular expression form to be case insensitive
 $days_of_week = ["/Sunday/i", "/Monday/i", "/Tuesday/i", "/Wednesday/i", "/Thursday/i", "/Friday/i", "/Saturday/i"];
 
@@ -19,9 +22,18 @@ while($row = mysqli_fetch_array($r, MYSQLI_ASSOC)){
 		if(preg_match($day, "$row[availability] <br>")){
 			//Trimmed slashes from day to display
 			$trimmed_day = str_replace('/i', '', substr_replace($day,'',0,1));
-			echo "<td class='day'><button>$trimmed_day</button></td>";
+			echo "<td class='day'><span class='dropdown-menu-btn'>$trimmed_day
+			<select class='dropdown-menu' style='visibility: hidden;'>
+				<option>1:00</option>
+				<option>1:30</option>
+				<option>2:00</option>
+				<option>5:30</option>
+				<option>6:00</option>
+				<option>6:30</option>
+			</select>
+			</span></td>";
 		}
-	else echo "<td>Unavailable</td>";
+		else echo "<td>Unavailable</td>";
 	}
 	echo "</table><br>";
 }

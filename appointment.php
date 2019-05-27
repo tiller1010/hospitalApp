@@ -11,7 +11,7 @@ include('header.html');
 
 ?>
 
-<form action='appointment_handler.php' method='POST'>
+<form action='appointment_handler.php' method='GET'>
 	Subject: <input type="text" name="subject"><br>
 	Message: <textarea name='message'></textarea><br>
 	<input type="submit" value="Submit">

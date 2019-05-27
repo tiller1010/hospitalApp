@@ -12,4 +12,9 @@ header a {
 .vertical_spacer {
   height: 12em; }
 
+.dropdown-menu {
+  position: absolute;
+  background-color: #9F71A8;
+  color: #fff; }
+
 /*# sourceMappingURL=output.css.map */
