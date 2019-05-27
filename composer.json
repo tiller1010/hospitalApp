@@ -1,0 +1,16 @@
+{
+    "name": "tille/hospital-app",
+    "description": "My first backend app, make appointments with doctors.",
+    "authors": [
+        {
+            "name": "Tyler",
+            "email": "tiller1010@gmail.com"
+        }
+    ],
+    "require": {},
+    // "autoload": {
+    // 	"psr-4":{
+    // 		"DBconnect\\": ""
+    // 	}
+    // }
+}
