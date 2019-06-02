@@ -25,13 +25,13 @@ if($_SERVER['REQUEST_METHOD']){
 
 	}
 
-	//Apply DRY to this if it works
 	elseif($_POST['user-type'] == 'doctor'){
 
 		list($check, $data) = validate($dbc, $_POST['fullname'], $_POST['pass'], 'doctor');
 
 		if($check){
 			session_start();
+			$_SESSION['doctor_validate'] = true;
 			$_SESSION['first_name'] = $data['first_name'];
 			$_SESSION['last_name'] = $data['last_name'];
 

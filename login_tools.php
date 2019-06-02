@@ -31,6 +31,7 @@ function validate($dbc, $user = '', $pwd = '', $usrType){
 			$q = "SELECT user_id, first_name, last_name FROM patients WHERE username = '$u' AND pass = SHA2('$p', 256)";
 		}
 		elseif($usrType == 'doctor'){
+			//Split fullname for query and session variable
 			$n = explode(' ', $u);
 			$f = $n[0];
 			$l = $n[1];

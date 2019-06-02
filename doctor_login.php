@@ -27,8 +27,6 @@ if(isset($errors) && !empty($errors)){
 
 <br>
 
-<a href='register.php'>Register</a>
-
 <?php
 
 include('footer.html');
