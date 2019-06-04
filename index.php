@@ -2,6 +2,7 @@
 	
 include('header.html');
 include('logout_link.php');
+echo "<div class='flexbox'>";
 echo "<a href='appointment.php'>Make an appointment today.</a>";
 echo "<br>";
 //Allow doctor to sign in, if they are already then link to dashboard
@@ -16,4 +17,5 @@ else{
 		  <br>
 		  <a href='logout.php'>Logout</a>";
 }
+echo "</div>";
 include('footer.html');

@@ -12,7 +12,7 @@ include('header.html');
 
 echo "Welcome to the dashboard, $_SESSION[first_name]";
 echo "<br>";
-echo "<a href='logout.php'>Logout</a>";
+echo "<div id='logout'><a href='logout.php'>Logout</a></div>";
 echo "<br>";
 
 require('connect_db.php');
