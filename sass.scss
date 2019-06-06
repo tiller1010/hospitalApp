@@ -1,14 +1,15 @@
 //Colors
 $heading_color: #80488C;
-
-$color-primary-3: #481054;
-$color-primary-4: #2E0138;
-$color-primary-0: #632770;
-$color-primary-1: #9F71A8;
+$background-color: #37353f;
+$main-background-color: #D5D0D7;
 
 //Spacing
 $vertical_spacing: 200px;
 $horizontal_spacing: 5em;
+
+body{
+	background-color: $background-color;
+}
 
 header{
 	position: absolute;
@@ -47,29 +48,49 @@ main{
 	width: 80%;
 	margin: auto;
 	padding: 20px;
-	padding-bottom: $vertical_spacing;
+	background-color: $main-background-color;
+	min-height: 240px;
 	#logout{
 		position: absolute;
 		top:30px;
 		right:30px;
 		a{
 			color: #fff;
-			font-size: 20px;
+			font-size: 30px;
 		}
 	}
 
 	.flexbox{
 		display: flex;
 		justify-content: space-around;
-
-		a{
-			color: #aaa;
+		height: 240px;
+		.homepage-container{
+			border: solid;
+			padding: 20px;
+			width: 30%;
+			position: relative;
+			&.appointment-img{
+				background: url('images/appointment.jpg') no-repeat center center/cover;
+			}
+			&.doctor-img{
+				background: url('images/doctor.jpg') no-repeat center center/cover;
+			}
+			&.staff-img{
+				background: url('images/staff.jpg') no-repeat center center/cover;
+			}
+			a{
+				font-family: arial;
+				font-size: 20px;
+				position: absolute;
+				bottom: 10px;
+				color: #fff;
+			}
 		}
 	}
 
 	.dropdown-menu{
 		position: absolute;
-		background-color: $color-primary-1;
+		background-color: $background-color;
 		color: #fff;
 	}
 
@@ -91,5 +112,18 @@ footer{
 		width: 100%;
 		height: 180px;
 		background-color: #445;
+	}
+}
+
+@media (max-width: 1000px){
+	.flexbox{
+		flex-direction: column;
+		align-items: center;
+		height: 100% !important;
+		.homepage-container{
+			height: 240px;
+			margin: 10px 0;
+			width: 80% !important;
+		}
 	}
 }

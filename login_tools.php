@@ -31,10 +31,18 @@ function validate($dbc, $user = '', $pwd = '', $usrType){
 			$q = "SELECT user_id, first_name, last_name FROM patients WHERE username = '$u' AND pass = SHA2('$p', 256)";
 		}
 		elseif($usrType == 'doctor'){
-			//Split fullname for query and session variable
-			$n = explode(' ', $u);
-			$f = $n[0];
-			$l = $n[1];
+			//Make sure a full name is entered
+			if(str_word_count($u) == 2){
+				//Split fullname for query and session variable
+				$n = explode(' ', $u);
+				$f = $n[0];
+				$l = $n[1];
+			}
+			else{
+				//Pass some dummy text so query goes through
+				$f = 'INVALID';
+				$l = 'INVALID';
+			}
 			$q = "SELECT first_name, last_name FROM doctors WHERE first_name = '$f' AND last_name = '$l' AND pass = SHA2('$p', 256)";
 		}
 		$r = mysqli_query($dbc, $q);

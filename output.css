@@ -1,3 +1,6 @@
+body {
+  background-color: #37353f; }
+
 header {
   position: absolute;
   left: 0;
@@ -29,22 +32,39 @@ main {
   width: 80%;
   margin: auto;
   padding: 20px;
-  padding-bottom: 200px; }
+  background-color: #D5D0D7;
+  min-height: 240px; }
   main #logout {
     position: absolute;
     top: 30px;
     right: 30px; }
     main #logout a {
       color: #fff;
-      font-size: 20px; }
+      font-size: 30px; }
   main .flexbox {
     display: flex;
-    justify-content: space-around; }
-    main .flexbox a {
-      color: #aaa; }
+    justify-content: space-around;
+    height: 240px; }
+    main .flexbox .homepage-container {
+      border: solid;
+      padding: 20px;
+      width: 30%;
+      position: relative; }
+      main .flexbox .homepage-container.appointment-img {
+        background: url("images/appointment.jpg") no-repeat center center/cover; }
+      main .flexbox .homepage-container.doctor-img {
+        background: url("images/doctor.jpg") no-repeat center center/cover; }
+      main .flexbox .homepage-container.staff-img {
+        background: url("images/staff.jpg") no-repeat center center/cover; }
+      main .flexbox .homepage-container a {
+        font-family: arial;
+        font-size: 20px;
+        position: absolute;
+        bottom: 10px;
+        color: #fff; }
   main .dropdown-menu {
     position: absolute;
-    background-color: #9F71A8;
+    background-color: #37353f;
     color: #fff; }
 
 footer {
@@ -62,5 +82,15 @@ footer {
     width: 100%;
     height: 180px;
     background-color: #445; }
+
+@media (max-width: 1000px) {
+  .flexbox {
+    flex-direction: column;
+    align-items: center;
+    height: 100% !important; }
+    .flexbox .homepage-container {
+      height: 240px;
+      margin: 10px 0;
+      width: 80% !important; } }
 
 /*# sourceMappingURL=output.css.map */

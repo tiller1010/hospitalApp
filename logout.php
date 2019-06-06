@@ -8,6 +8,9 @@ $_SESSION = array();
 
 session_destroy();
 
-echo "Goodbye";
+echo "<div class='goodbye-msg'>
+	  <h2>Goodbye</h2>
+	  <a href='index.php'>Return to homepage.</a>
+	  </div>";
 
 include('footer.html');
