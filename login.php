@@ -12,22 +12,24 @@ if(isset($errors) && !empty($errors)){
 
 ?>
 
-<h1>Login</h1>
-<form action="login_action.php" method="POST">
-	<input type="hidden" name="user-type" value="patient">
-	<p>
-		Username: <input type="text" name="username">
-	</p>
-	<p>
-		Password: <input type="password" name="pass">
-	</p>
+<div class="form">
+	<h1>Login</h1>
+	<form action="login_action.php" method="POST">
+		<input type="hidden" name="user-type" value="patient">
+		<p>
+			Username: <input type="text" name="username">
+		</p>
+		<p>
+			Password: <input type="password" name="pass">
+		</p>
+		<br>
+		<input type="submit" value="Login">
+	</form>
+
 	<br>
-	<input type="submit" value="Login">
-</form>
 
-<br>
-
-<a href='register.php'>Register</a>
+	<a href='register.php'>Register</a>
+</div>
 
 <?php
 

@@ -1,14 +1,27 @@
 //Colors
-$heading_color: #80488C;
+$heading_color: #cd46ea;
 $background-color: #37353f;
 $main-background-color: #D5D0D7;
+
+//Fonts
+$header-font: 'Open Sans', sans-serif;
+$page-font: 'Barlow Semi Condensed', sans-serif;
 
 //Spacing
 $vertical_spacing: 200px;
 $horizontal_spacing: 5em;
 
+//Text-shadow
+@mixin text-shadow($color){
+	text-shadow: 1px 1px 8px $color;
+} 
+
 body{
 	background-color: $background-color;
+}
+
+h1, h2, h3, h4{
+	font-family: $header-font;
 }
 
 header{
@@ -22,16 +35,17 @@ header{
 		color: white;
 		text-indent: $horizontal_spacing;
 		z-index: 10;
+		text-decoration: none;
+		font-family: $header-font;
 	}
 
 	.banner{
 		position: relative;
 		width: 100%;
-		height: 400px;
+		height: 500px;
 		overflow: hidden;
 		img{
 			position: absolute;
-			bottom: 0;
 			max-width: 100%;
 			display: block;
 		}
@@ -45,11 +59,11 @@ header{
 main{
 	z-index: 2;
 	background: #fff;
-	width: 80%;
 	margin: auto;
 	padding: 20px;
 	background-color: $main-background-color;
 	min-height: 240px;
+	font-family: $page-font;
 	#logout{
 		position: absolute;
 		top:30px;
@@ -58,6 +72,15 @@ main{
 			color: #fff;
 			font-size: 30px;
 		}
+	}
+
+	.clock{
+		text-align: center;
+		margin: 50px;
+		font-size: 3.5em;
+		background: rgba(12, 12, 12, .8);
+		color: #eee;
+    	padding: 8px 12px;
 	}
 
 	.flexbox{
@@ -79,11 +102,32 @@ main{
 				background: url('images/staff.jpg') no-repeat center center/cover;
 			}
 			a{
-				font-family: arial;
-				font-size: 20px;
+				font-family: $page-font;
+				font-size: 1.8em;
 				position: absolute;
 				bottom: 10px;
 				color: #fff;
+				@include text-shadow(#000);
+			}
+		}
+	}
+
+	.form{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&.availability{
+			td{
+				width: 140px;
+				cursor: pointer;
+				background-color: #999;
+				text-align: center;
+				select{
+					cursor: pointer;
+					option:hover{
+						cursor: pointer;
+					}
+				}
 			}
 		}
 	}
@@ -105,7 +149,7 @@ footer{
 		position: absolute;
 		bottom: 10px;
 		right: 10px;
-		font-style: italic;
+		font-style: oblique;
 		margin-right: 10px;
 	}
 	.stripe{
@@ -116,14 +160,25 @@ footer{
 }
 
 @media (max-width: 1000px){
-	.flexbox{
-		flex-direction: column;
-		align-items: center;
-		height: 100% !important;
-		.homepage-container{
-			height: 240px;
-			margin: 10px 0;
-			width: 80% !important;
+	main{
+		#logout{
+			position: static;
+			margin:12px;
+			font-size: 1.1em;
+		}
+		.clock{
+			font-size: 1.7em;
+			margin: unset;
+		}
+		.flexbox{
+			flex-direction: column;
+			align-items: center;
+			height: 100% !important;
+			.homepage-container{
+				height: 240px;
+				margin: 10px 0;
+				width: 80% !important;
+			}
 		}
 	}
 }
