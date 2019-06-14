@@ -7,10 +7,7 @@
             "email": "tiller1010@gmail.com"
         }
     ],
-    "require": {},
-    // "autoload": {
-    // 	"psr-4":{
-    // 		"DBconnect\\": ""
-    // 	}
-    // }
+    "require": {
+        "nesbot/carbon": "^2.19"
+    }
 }

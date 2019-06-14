@@ -1,7 +1,15 @@
 <?php
-	
+
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
 include('header.html');
 include('logout_link.php');
+
+//Package here for a clock
+printf("<div class='clock'>Right now in Erie is %s</div>", Carbon::now('GMT-4'));
+
 echo "<div class='flexbox'>";
 //Allow doctor to sign in and patient to make appointment
 if(!isset($_SESSION['doctor_validate'])){
