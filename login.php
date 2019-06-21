@@ -33,4 +33,4 @@ if(isset($errors) && !empty($errors)){
 
 <?php
 
-include('footer.html');
+include('footer.php');

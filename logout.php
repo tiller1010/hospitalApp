@@ -13,4 +13,4 @@ echo "<div class='goodbye-msg'>
 	  <a href='index.php'>Return to homepage.</a>
 	  </div>";
 
-include('footer.html');
+include('footer.php');

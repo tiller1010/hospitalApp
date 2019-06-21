@@ -16,6 +16,10 @@ $q = "INSERT INTO appointments(day, time, doctor, subject, message)
 	  VALUES ('$day', '$time', '$doctor', '$subject', '$message');";
 mysqli_query($dbc, $q);
 
-echo "Your appointment for $subject has been submitted for $time on $day with Dr. $doctor";
-echo "<br>";
-echo "$message";
+echo "<div class='submit-complete-container'>
+      <div class='submit-complete'>Your appointment for $subject has been submitted for $time on $day with Dr. $doctor</div>
+	  <br>
+	  <div class='issue'>Issue: $message</div>
+	  </div>";
+
+include('footer.php');

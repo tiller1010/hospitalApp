@@ -10,7 +10,7 @@ if(!isset($_SESSION['doctor_validate'])){
 
 include('header.html');
 
-echo "Welcome to the dashboard, $_SESSION[first_name]";
+echo "<div class='appointment-list'><div class='welcome-staff'>Welcome to the dashboard, $_SESSION[first_name]</div>";
 echo "<br>";
 echo "<div id='logout'><a href='logout.php'>Logout</a></div>";
 echo "<br>";
@@ -26,6 +26,10 @@ if(mysqli_num_rows($r) == 0){
 }
 else{
 	while($row = mysqli_fetch_array($r, MYSQLI_ASSOC)){
-		echo "$row[day] $row[time] with $row[doctor] <br>";
+		echo "$row[day] $row[time] with Dr.$row[doctor] <br>";
 	}
 }
+
+echo "</div>";
+
+include('footer.php');

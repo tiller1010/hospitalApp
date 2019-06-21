@@ -45,4 +45,4 @@ while($row = mysqli_fetch_array($r, MYSQLI_ASSOC)){
 }
 echo "</div>";
 
-include('footer.html');
+include('footer.php');

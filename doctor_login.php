@@ -11,22 +11,22 @@ if(isset($errors) && !empty($errors)){
 }
 
 ?>
-
-<h1>Login</h1>
-<form action="login_action.php" method="POST">
-	<input type="hidden" name="user-type" value="doctor">
-	<p>
-		Full name: <input type="text" name="fullname">
-	</p>
-	<p>
-		Password: <input type="password" name="pass">
-	</p>
-	<br>
-	<input type="submit" value="Login">
-</form>
-
+<div class="form">
+	<h1>Login</h1>
+	<form action="login_action.php" method="POST">
+		<input type="hidden" name="user-type" value="doctor">
+		<p>
+			Full name: <input type="text" name="fullname">
+		</p>
+		<p>
+			Password: <input type="password" name="pass">
+		</p>
+		<br>
+		<input type="submit" value="Login">
+	</form>
+</div>
 <br>
 
 <?php
 
-include('footer.html');
+include('footer.php');

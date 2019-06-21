@@ -4,6 +4,12 @@ body {
 h1, h2, h3, h4 {
   font-family: "Open Sans", sans-serif; }
 
+input {
+  padding: 6px;
+  margin: 10px 0;
+  max-width: 300px;
+  min-width: 00px; }
+
 header {
   position: absolute;
   left: 0;
@@ -11,6 +17,10 @@ header {
   background: #cd46ea;
   width: 100%;
   z-index: -2; }
+  header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 1px #333, -2px 2px 1px #333, 2px -2px 1px #333, -2px -2px 1px #333;
+    letter-spacing: 3px; }
   header a {
     color: white;
     text-indent: 5em;
@@ -34,7 +44,7 @@ main {
   z-index: 2;
   background: #fff;
   margin: auto;
-  padding: 20px;
+  padding: 100px 5px;
   background-color: #D5D0D7;
   min-height: 240px;
   font-family: "Barlow Semi Condensed", sans-serif; }
@@ -45,19 +55,12 @@ main {
     main #logout a {
       color: #fff;
       font-size: 30px; }
-  main .clock {
-    text-align: center;
-    margin: 50px;
-    font-size: 3.5em;
-    background: rgba(12, 12, 12, 0.8);
-    color: #eee;
-    padding: 8px 12px; }
   main .flexbox {
     display: flex;
     justify-content: space-around;
     height: 240px; }
     main .flexbox .homepage-container {
-      border: solid;
+      border: solid #ace 10px;
       padding: 20px;
       width: 30%;
       position: relative; }
@@ -82,7 +85,8 @@ main {
       width: 140px;
       cursor: pointer;
       background-color: #999;
-      text-align: center; }
+      text-align: center;
+      padding: 5px; }
       main .form.availability td select {
         cursor: pointer; }
         main .form.availability td select option:hover {
@@ -90,7 +94,34 @@ main {
   main .dropdown-menu {
     position: absolute;
     background-color: #37353f;
-    color: #fff; }
+    color: #fff;
+    cursor: pointer;
+    padding: 5px; }
+  main .submit-complete-container {
+    font-size: 2em;
+    width: 80%;
+    margin: auto; }
+    main .submit-complete-container .submit-complete {
+      text-align: center;
+      background: #7356ad;
+      color: #fff;
+      padding: 12px;
+      border-radius: 20px;
+      font-style: oblique; }
+    main .submit-complete-container .issue {
+      text-align: justify; }
+  main .goodbye-msg {
+    text-align: center;
+    font-style: italic; }
+  main .appointment-list {
+    margin: auto;
+    width: 300px; }
+    main .appointment-list .welcome-staff {
+      font-size: 1.8em;
+      white-space: nowrap;
+      position: relative;
+      left: -180px;
+      top: -50px; }
 
 footer {
   position: absolute;
@@ -107,11 +138,25 @@ footer {
     width: 100%;
     height: 180px;
     background-color: #445; }
+    footer .stripe .clock {
+      position: absolute;
+      bottom: 10px;
+      left: 10px; }
 
 @media (max-width: 1000px) {
+  header h1 {
+    font-size: 1.8em;
+    text-align: center;
+    text-indent: 0; }
+  header h2 {
+    font-size: 1em;
+    text-align: center;
+    text-indent: 0; }
+
   main #logout {
     position: static;
-    margin: 12px;
+    text-align: center;
+    margin-bottom: 65px;
     font-size: 1.1em; }
   main .clock {
     font-size: 1.7em;
@@ -124,5 +169,18 @@ footer {
       height: 240px;
       margin: 10px 0;
       width: 80% !important; } }
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+    position: relative;
+    left: -4px; }
+    main .doctors_table tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2px; }
+    main .appointment-list .welcome-staff {
+      font-size: 1.3em;
+      white-space: nowrap;
+      left: 0; } }
 
 /*# sourceMappingURL=output.css.map */

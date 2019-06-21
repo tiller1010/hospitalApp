@@ -14,7 +14,11 @@ $horizontal_spacing: 5em;
 //Text-shadow
 @mixin text-shadow($color){
 	text-shadow: 1px 1px 8px $color;
-} 
+}
+
+@mixin font-border($offset, $color){
+	text-shadow: $offset $offset 1px $color, (-1 * $offset) $offset 1px $color, $offset (-1 * $offset) 1px $color, (-1 * $offset) (-1 * $offset) 1px $color;
+}
 
 body{
 	background-color: $background-color;
@@ -24,6 +28,13 @@ h1, h2, h3, h4{
 	font-family: $header-font;
 }
 
+input{
+	padding: 6px;
+	margin: 10px 0;
+	max-width: 300px;
+	min-width: 00px;
+}
+
 header{
 	position: absolute;
 	left:0;
@@ -31,6 +42,11 @@ header{
 	background: $heading_color;
 	width: 100%;
 	z-index: -2;
+	h1{
+		font-size: 2.5em;
+		@include font-border(2px, #333);
+		letter-spacing: 3px;
+	}
 	a{
 		color: white;
 		text-indent: $horizontal_spacing;
@@ -60,7 +76,7 @@ main{
 	z-index: 2;
 	background: #fff;
 	margin: auto;
-	padding: 20px;
+	padding: 100px 5px;
 	background-color: $main-background-color;
 	min-height: 240px;
 	font-family: $page-font;
@@ -74,21 +90,12 @@ main{
 		}
 	}
 
-	.clock{
-		text-align: center;
-		margin: 50px;
-		font-size: 3.5em;
-		background: rgba(12, 12, 12, .8);
-		color: #eee;
-    	padding: 8px 12px;
-	}
-
 	.flexbox{
 		display: flex;
 		justify-content: space-around;
 		height: 240px;
 		.homepage-container{
-			border: solid;
+			border: solid #ace 10px;
 			padding: 20px;
 			width: 30%;
 			position: relative;
@@ -122,6 +129,7 @@ main{
 				cursor: pointer;
 				background-color: #999;
 				text-align: center;
+				padding: 5px;
 				select{
 					cursor: pointer;
 					option:hover{
@@ -136,6 +144,42 @@ main{
 		position: absolute;
 		background-color: $background-color;
 		color: #fff;
+		cursor: pointer;
+		padding: 5px;
+	}
+
+	.submit-complete-container{
+	    font-size: 2em;
+	    width: 80%;
+	    margin: auto;
+	    .submit-complete{
+	    	text-align: center;
+	    	background: #7356ad;
+	    	color: #fff;
+	    	padding: 12px;
+	    	border-radius: 20px;
+			font-style: oblique;
+	    }
+		.issue{
+			text-align: justify;
+		}
+	}
+
+	.goodbye-msg{
+		text-align: center;
+		font-style: italic;
+	}
+
+	.appointment-list{
+		margin: auto;
+		width: 300px;
+		.welcome-staff{
+			font-size: 1.8em;
+			white-space: nowrap;
+		    position: relative;
+		    left: -180px;
+		    top: -50px;
+		}
 	}
 
 }
@@ -156,14 +200,32 @@ footer{
 		width: 100%;
 		height: 180px;
 		background-color: #445;
+		.clock{
+			position: absolute;
+    		bottom: 10px;
+    		left: 10px;
+		}
 	}
 }
 
 @media (max-width: 1000px){
+	header{
+		h1{
+			font-size: 1.8em;
+			text-align: center;
+			text-indent: 0;
+		}
+		h2{
+			font-size: 1em;
+			text-align: center;
+			text-indent: 0;
+		}
+	}
 	main{
 		#logout{
 			position: static;
-			margin:12px;
+			text-align: center;
+			margin-bottom: 65px;
 			font-size: 1.1em;
 		}
 		.clock{
@@ -178,6 +240,28 @@ footer{
 				height: 240px;
 				margin: 10px 0;
 				width: 80% !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 600px){
+	main{
+		width: 100%;
+		position: relative;
+		left: -4px;
+		.doctors_table{
+			tr{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 2px;
+			}
+		}
+		.appointment-list{
+			.welcome-staff{
+				font-size: 1.3em;
+				white-space: nowrap;
+				left: 0;
 			}
 		}
 	}
